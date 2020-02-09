@@ -1,0 +1,1 @@
+web: gunicorn leniva_list.wsgi
