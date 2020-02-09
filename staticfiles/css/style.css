@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.card {
+    height: 400px;
+    overflow: hidden;
+}
+
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.head_text, .search_text {
+    text-align: center;
+}
+
+@media all and (max-width: 600px) {
+    .head_text, .search_text {
+        font-size: 180%;
+    }
+}
