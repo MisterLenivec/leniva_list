@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static "css/style.css" %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
   <nav class="purple lighten-1">
@@ -50,7 +51,7 @@
             chrome_reader_mode
           </i>
           <p>A much sexier front-end to Craigslist</p>
-          <p class="light center">We built this with ❤️</p>
+          <p class="light center">We built this with ❤ and sliders️</p>
         </div>
       </div>
     </div>
@@ -77,7 +78,13 @@
       </div>
     </div>
   </footer>
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.carousel.carousel-slider').carousel({
+        fullWidth: true
+      });
+    });
+  </script>
 </body>
 </html>

@@ -35,13 +35,16 @@ def new_search(request):
         else:
             post_price = 'N/A'
 
-        if post.find(class_='result-image').get('data-ids'):
-            post_image_id = post.find(class_='result-image').get('data-ids').split(',')[0][2:]
-            post_image_url = BASE_IMAGE_URL.format(post_image_id)
-        else:
-            post_image_url = 'https://craigslist.org/images/peace.jpg'
+        post_image_urls = []
 
-        final_postings.append((post_title, post_url, post_price, post_image_url))
+        if post.find(class_='result-image').get('data-ids'):
+            post_image_ids = [i[2:] for i in post.find(class_='result-image').get('data-ids').split(',')]
+            for i in post_image_ids:
+                post_image_urls.append(BASE_IMAGE_URL.format(i))
+        else:
+            post_image_urls.append('https://craigslist.org/images/peace.jpg')
+
+        final_postings.append((post_title, post_url, post_price, post_image_urls))
 
     context = {
         'search': search,
